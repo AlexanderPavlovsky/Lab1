@@ -1,13 +1,22 @@
 package company.Class;
 
 import static company.Class.FunUtils.floatFromat;
-
+/**
+ * Class isosceles triangle
+ */
 public class IsoscelesTriangle extends Triangle {
-
+    /**
+     * Construct of IsoscelesTriangle class
+     * @param sideA The first side triangle
+     * @param sideB The second side triangle
+     * @param sideC The third side triangle
+     */
     public IsoscelesTriangle(final double sideA, final double sideB, final double sideC) {
         super(sideA, sideB, sideC);
     }
-
+    /**
+     * Get info about isosceles triangle
+     */
     @Override
     public String toString() {
         String result;

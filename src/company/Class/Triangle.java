@@ -2,18 +2,49 @@ package company.Class;
 
 import static company.Class.FunUtils.floatFromat;
 
+/**
+ * Class triangle
+ */
 public class Triangle {
-
+    /**
+     * The first side triangle
+     */
     protected final double sideA;
+    /**
+     * The second side triangle
+     */
     protected final double sideB;
+    /**
+     * The third side triangle
+     */
     protected final double sideC;
+    /**
+     * The first corner triangle
+     */
     protected double alpha;
+    /**
+     * The second corner triangle
+     */
     protected double betta;
+    /**
+     * The third corner triangle
+     */
     protected double gamma;
+    /**
+     * Perimeter triangle
+     */
     protected double perimeter;
+    /**
+     * Area triangle
+     */
     protected double area;
 
-
+    /**
+     * Construct of Triangle class
+     * @param sideA The first side triangle
+     * @param sideB The second side triangle
+     * @param sideC The third side triangle
+     */
     public Triangle(final double sideA, final double sideB, final double sideC) {
         this.sideA = sideA > 0 ? sideA : 0;
         this.sideB = sideB > 0 ? sideB : 0;
@@ -23,6 +54,9 @@ public class Triangle {
         }
     }
 
+    /**
+     * Calculation of unknown values
+     */
     private void calculation() {
         alpha = (Math.acos((Math.pow(sideB, 2) + Math.pow(sideC, 2) - Math.pow(sideA, 2)) / (2 * sideB * sideC)) * 180) / Math.PI;
         betta = (Math.acos((Math.pow(sideA, 2) + Math.pow(sideC, 2) - Math.pow(sideB, 2)) / (2 * sideA * sideC)) * 180) / Math.PI;
@@ -31,6 +65,10 @@ public class Triangle {
         area = Math.sqrt((perimeter / 2) * (perimeter / 2 - sideA) * (perimeter / 2 - sideB) * (perimeter / 2 - sideC));
     }
 
+
+    /**
+     * Get info about triangle
+     */
     @Override
     public String toString() {
         String result;

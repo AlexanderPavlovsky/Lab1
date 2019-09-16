@@ -9,16 +9,20 @@ import java.util.Scanner;
 
 import static company.Class.FunUtils.*;
 
-
+/**
+ * Class Main
+ */
 public class Main {
-
+    /**
+     * Main function
+     */
     public static void main(String[] args) {
         int quantityTriangles, quantityIsoscelesTriangles;
-        Scanner str = new Scanner(System.in);
+        final Scanner str = new Scanner(System.in);
         System.out.print("Enter quantity of triangles: ");
         quantityTriangles = isPositive(str);
         if (quantityTriangles != 0) {
-            Triangles triangles = new Triangles(quantityTriangles);
+            final Triangles triangles = new Triangles(quantityTriangles);
             System.out.println("Enter the sides of all the triangles:");
             construct(triangles, str, quantityTriangles);
             System.out.println(triangles.toString());
@@ -29,7 +33,7 @@ public class Main {
         System.out.print("Enter quantity of isosceles triangles: ");
         quantityIsoscelesTriangles = isPositive(str);
         if (quantityIsoscelesTriangles != 0) {
-            IsoscelesTriangles isoscelesTriangles = new IsoscelesTriangles(quantityIsoscelesTriangles);
+            final IsoscelesTriangles isoscelesTriangles = new IsoscelesTriangles(quantityIsoscelesTriangles);
             System.out.println("Enter the sides of all the isosceles triangles:");
             construct(isoscelesTriangles, str, quantityIsoscelesTriangles);
             System.out.println(isoscelesTriangles.toString());
