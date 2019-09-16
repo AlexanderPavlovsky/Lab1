@@ -1,5 +1,7 @@
 package company.Class;
 
+import static company.Class.FunUtils.floatFromat;
+
 public class Triangle {
 
     protected final double sideA;
@@ -33,7 +35,7 @@ public class Triangle {
     public String toString() {
         String result;
         if (sideA < sideB + sideC && sideB < sideA + sideC && sideC < sideA + sideB) {
-            result = "Triangle exists!!! Sides:  a = " + sideA + " cm ; b = " + sideB + " cm ; c = " + sideC + " cm. Corner: alpha = " + String.format("%6.2f", alpha) + " degrees; betta = " + String.format("%6.2f", betta) + " degrees; gamma = " + String.format("%6.2f", gamma) + " degrees. Perimeter: P = " + String.format("%6.2f", perimeter) + " cm. Area: S = " + String.format("%6.2f", area) + " cm^2.";
+            result = "Triangle exists!!! Sides:  a = " + sideA + " cm ; b = " + sideB + " cm ; c = " + sideC + " cm. Corner: alpha = " + floatFromat(alpha) + " degrees; betta = " + floatFromat(betta) + " degrees; gamma = " + floatFromat(gamma) + " degrees. Perimeter: P = " + floatFromat(perimeter) + " cm. Area: S = " + floatFromat(area) + " cm^2.";
         } else {
             result = "Triangle doesn't exist !!!";
         }

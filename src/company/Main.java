@@ -7,32 +7,33 @@ import company.Class.Triangles;
 
 import java.util.Scanner;
 
+import static company.Class.FunUtils.*;
+
 
 public class Main {
-
 
     public static void main(String[] args) {
         int quantityTriangles, quantityIsoscelesTriangles;
         Scanner str = new Scanner(System.in);
         System.out.print("Enter quantity of triangles: ");
         quantityTriangles = isPositive(str);
-        if(quantityTriangles != 0) {
+        if (quantityTriangles != 0) {
             Triangles triangles = new Triangles(quantityTriangles);
             System.out.println("Enter the sides of all the triangles:");
             construct(triangles, str, quantityTriangles);
             System.out.println(triangles.toString());
-            System.out.println("Average area of all the triangles: " + String.format("%6.2f", triangles.getAverageArea()) + " cm^2");
+            System.out.println("Average area of all the triangles: " + floatFromat(triangles.getAverageArea()) + " cm^2");
         } else {
             System.out.println("Zero triangles");
         }
         System.out.print("Enter quantity of isosceles triangles: ");
         quantityIsoscelesTriangles = isPositive(str);
-        if(quantityIsoscelesTriangles != 0) {
+        if (quantityIsoscelesTriangles != 0) {
             IsoscelesTriangles isoscelesTriangles = new IsoscelesTriangles(quantityIsoscelesTriangles);
             System.out.println("Enter the sides of all the isosceles triangles:");
             construct(isoscelesTriangles, str, quantityIsoscelesTriangles);
             System.out.println(isoscelesTriangles.toString());
-            System.out.println("Minimal area of all the isosceles triangles: " + String.format("%6.2f", isoscelesTriangles.getMinArea()) + " cm^2");
+            System.out.println("Minimal area of all the isosceles triangles: " + floatFromat(isoscelesTriangles.getMinArea()) + " cm^2");
         } else {
             System.out.println("Zero isosceles triangles");
         }
@@ -70,28 +71,4 @@ public class Main {
         }
     }
 
-    private static double isDouble(final Scanner str) {
-        while (!str.hasNextDouble()) {
-            System.out.println("That not a number!");
-            str.next();
-        }
-        return str.nextDouble();
-    }
-
-    private static int isPositive(final Scanner str) {
-        int positive = isInt(str);
-        while (positive < 0) {
-            System.out.println("That not a positive number!");
-            positive = isInt(str);
-        }
-        return positive;
-    }
-
-    private static int isInt(final Scanner str) {
-        while (!str.hasNextInt()) {
-            System.out.println("That not a number!");
-            str.next();
-        }
-        return str.nextInt();
-    }
 }
