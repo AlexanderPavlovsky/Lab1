@@ -14,6 +14,15 @@ import static company.Class.FunUtils.*;
  */
 public class Main {
     /**
+     * Object Triangles
+     */
+    private static Triangles triangles;
+    /**
+     * Object IsoscelesTriangles
+     */
+    private static IsoscelesTriangles isoscelesTriangles;
+
+    /**
      * Main function
      */
     public static void main(String[] args) {
@@ -22,7 +31,7 @@ public class Main {
         System.out.print("Enter quantity of triangles: ");
         quantityTriangles = isPositive(str);
         if (quantityTriangles != 0) {
-            final Triangles triangles = new Triangles(quantityTriangles);
+            triangles = new Triangles(quantityTriangles);
             System.out.println("Enter the sides of all the triangles:");
             construct(triangles, str, quantityTriangles);
             System.out.println(triangles.toString());
@@ -33,7 +42,7 @@ public class Main {
         System.out.print("Enter quantity of isosceles triangles: ");
         quantityIsoscelesTriangles = isPositive(str);
         if (quantityIsoscelesTriangles != 0) {
-            final IsoscelesTriangles isoscelesTriangles = new IsoscelesTriangles(quantityIsoscelesTriangles);
+            isoscelesTriangles = new IsoscelesTriangles(quantityIsoscelesTriangles);
             System.out.println("Enter the sides of all the isosceles triangles:");
             construct(isoscelesTriangles, str, quantityIsoscelesTriangles);
             System.out.println(isoscelesTriangles.toString());
@@ -43,36 +52,26 @@ public class Main {
         }
     }
 
-    private static void construct(final Triangles triangles, final Scanner str, final int quantityTriangles) {
+    private static <T> void construct(T triangle, final Scanner str, final int quantity) {
         double sideA, sideB, sideC;
-        Triangle triangle;
-        for (int i = 0; i < quantityTriangles; i++) {
-            System.out.println((i + 1) + ") Triangle:");
+        for (int i = 0; i < quantity; i++) {
+            if (triangle.getClass().getName().equals("company.Class.Triangles")) {
+                System.out.println((i + 1) + ") Triangle:");
+            } else {
+                System.out.println((i + 1) + ") Isosceles triangle:");
+            }
             System.out.print("a = ");
             sideA = isDouble(str);
             System.out.print("b = ");
             sideB = isDouble(str);
             System.out.print("c = ");
             sideC = isDouble(str);
-            triangle = new Triangle(sideA, sideB, sideC);
-            triangles.setTriangle(triangle, i);
+            if (triangle.getClass().getName().equals("company.Class.Triangles")) {
+                triangles.setTriangle(new Triangle(sideA, sideB, sideC), i);
+            } else {
+                isoscelesTriangles.setIsoscelesTriangle(new IsoscelesTriangle(sideA, sideB, sideC), i);
+            }
+
         }
     }
-
-    private static void construct(final IsoscelesTriangles isoscelesTriangles, final Scanner str, final int quantityIsoscelesTriangles) {
-        double sideA, sideB, sideC;
-        IsoscelesTriangle isoscelesTriangle;
-        for (int i = 0; i < quantityIsoscelesTriangles; i++) {
-            System.out.println((i + 1) + ") Isosceles triangle:");
-            System.out.print("a = ");
-            sideA = isDouble(str);
-            System.out.print("b = ");
-            sideB = isDouble(str);
-            System.out.print("c = ");
-            sideC = isDouble(str);
-            isoscelesTriangle = new IsoscelesTriangle(sideA, sideB, sideC);
-            isoscelesTriangles.setIsoscelesTriangle(isoscelesTriangle, i);
-        }
-    }
-
 }

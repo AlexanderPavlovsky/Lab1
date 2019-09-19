@@ -8,8 +8,10 @@ public class IsoscelesTriangles {
      * Array isosceles triangles
      */
     private IsoscelesTriangle[] isoscelesTriangles;
+
     /**
      * Construct of IsoscelesTriangles class
+     *
      * @param quantityIsoscelesTriangles quantity isosceles triangle
      */
     public IsoscelesTriangles(final int quantityIsoscelesTriangles) {
@@ -18,26 +20,28 @@ public class IsoscelesTriangles {
 
     /**
      * Set array of isosceles triangle
+     *
      * @param isoscelesTriangle Object isosceles triangle
-     * @param index number of isosceles triangle
+     * @param index             number of isosceles triangle
      */
     public void setIsoscelesTriangle(final IsoscelesTriangle isoscelesTriangle, final int index) {
         this.isoscelesTriangles[index] = isoscelesTriangle;
     }
 
     /**
-     *  Calculation min area of isosceles triangles
+     * Calculation min area of isosceles triangles
+     *
      * @return get min area
      */
     public double getMinArea() {
         double minArea = isoscelesTriangles[0].area;
         for (int i = 1; i < isoscelesTriangles.length; i++) {
-            if (minArea != 0) {
-                if (minArea > isoscelesTriangles[i].area) {
+            if (isoscelesTriangles[i].area != 0) {
+                if (minArea > isoscelesTriangles[i].area && minArea != 0) {
+                    minArea = isoscelesTriangles[i].area;
+                } else {
                     minArea = isoscelesTriangles[i].area;
                 }
-            } else {
-                minArea = isoscelesTriangles[i].area;
             }
         }
         return minArea;
