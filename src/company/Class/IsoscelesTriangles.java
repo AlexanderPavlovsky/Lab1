@@ -22,7 +22,7 @@ public class IsoscelesTriangles {
      * Set array of isosceles triangle
      *
      * @param isoscelesTriangle Object isosceles triangle
-     * @param index             number of isosceles triangle
+     * @param index number of isosceles triangle
      */
     public void setIsoscelesTriangle(final IsoscelesTriangle isoscelesTriangle, final int index) {
         this.isoscelesTriangles[index] = isoscelesTriangle;
