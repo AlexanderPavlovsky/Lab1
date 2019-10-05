@@ -1,4 +1,4 @@
-package company.Class;
+package company.classes;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -59,5 +59,3 @@ public class FunUtils {
         return str.nextInt();
     }
 }
-
-//

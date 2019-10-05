@@ -1,4 +1,4 @@
-package company.Class;
+package company.classes;
 
 /**
  * Class triangles

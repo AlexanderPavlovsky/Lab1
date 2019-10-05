@@ -1,6 +1,6 @@
-package company.Class;
+package company.classes;
 
-import static company.Class.FunUtils.floatFromat;
+import static company.classes.FunUtils.floatFromat;
 /**
  * Class isosceles triangle
  */

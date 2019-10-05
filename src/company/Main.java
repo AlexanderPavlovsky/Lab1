@@ -1,13 +1,13 @@
 package company;
 
-import company.Class.IsoscelesTriangle;
-import company.Class.IsoscelesTriangles;
-import company.Class.Triangle;
-import company.Class.Triangles;
+import company.classes.IsoscelesTriangle;
+import company.classes.IsoscelesTriangles;
+import company.classes.Triangle;
+import company.classes.Triangles;
 
 import java.util.Scanner;
 
-import static company.Class.FunUtils.*;
+import static company.classes.FunUtils.*;
 
 /**
  * Class Main
@@ -33,7 +33,7 @@ public class Main {
         if (quantityTriangles != 0) {
             triangles = new Triangles(quantityTriangles);
             System.out.println("Enter the sides of all the triangles:");
-            construct(triangles, str, quantityTriangles);
+            createTriangle(triangles, str, quantityTriangles);
             System.out.println(triangles.toString());
             System.out.println("Average area of all the triangles: " + floatFromat(triangles.getAverageArea()) + " cm^2");
         } else {
@@ -44,7 +44,7 @@ public class Main {
         if (quantityIsoscelesTriangles != 0) {
             isoscelesTriangles = new IsoscelesTriangles(quantityIsoscelesTriangles);
             System.out.println("Enter the sides of all the isosceles triangles:");
-            construct(isoscelesTriangles, str, quantityIsoscelesTriangles);
+            createTriangle(isoscelesTriangles, str, quantityIsoscelesTriangles);
             System.out.println(isoscelesTriangles.toString());
             System.out.println("Minimal area of all the isosceles triangles: " + floatFromat(isoscelesTriangles.getMinArea()) + " cm^2");
         } else {
@@ -52,10 +52,10 @@ public class Main {
         }
     }
 
-    private static <T> void construct(T triangle, final Scanner str, final int quantity) {
+    private static <T> void createTriangle(T triangle, final Scanner str, final int quantity) {
         double sideA, sideB, sideC;
         for (int i = 0; i < quantity; i++) {
-            if (triangle.getClass().getName().equals("company.Class.Triangles")) {
+            if (triangle.getClass().getName().equals("company.classes.Triangles")) {
                 System.out.println((i + 1) + ") Triangle:");
             } else {
                 System.out.println((i + 1) + ") Isosceles triangle:");
@@ -66,7 +66,7 @@ public class Main {
             sideB = isDouble(str);
             System.out.print("c = ");
             sideC = isDouble(str);
-            if (triangle.getClass().getName().equals("company.Class.Triangles")) {
+            if (triangle.getClass().getName().equals("company.classes.Triangles")) {
                 triangles.setTriangle(new Triangle(sideA, sideB, sideC), i);
             } else {
                 isoscelesTriangles.setIsoscelesTriangle(new IsoscelesTriangle(sideA, sideB, sideC), i);

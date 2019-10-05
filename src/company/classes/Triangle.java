@@ -1,6 +1,6 @@
-package company.Class;
+package company.classes;
 
-import static company.Class.FunUtils.floatFromat;
+import static company.classes.FunUtils.floatFromat;
 
 /**
  * Class triangle
@@ -9,15 +9,15 @@ public class Triangle {
     /**
      * The first side triangle
      */
-    protected final double sideA;
+    protected double sideA;
     /**
      * The second side triangle
      */
-    protected final double sideB;
+    protected double sideB;
     /**
      * The third side triangle
      */
-    protected final double sideC;
+    protected double sideC;
     /**
      * The first corner triangle
      */
@@ -46,10 +46,10 @@ public class Triangle {
      * @param sideC The third side triangle
      */
     public Triangle(final double sideA, final double sideB, final double sideC) {
-        this.sideA = sideA > 0 ? sideA : 0;
-        this.sideB = sideB > 0 ? sideB : 0;
-        this.sideC = sideC > 0 ? sideC : 0;
         if (sideA < sideB + sideC && sideB < sideA + sideC && sideC < sideA + sideB) {
+            this.sideA = sideA;
+            this.sideB = sideB;
+            this.sideC = sideC;
             calculation();
         }
     }
