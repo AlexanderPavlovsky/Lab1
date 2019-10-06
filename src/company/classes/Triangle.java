@@ -7,43 +7,43 @@ import static company.classes.FunUtils.floatFromat;
  */
 public class Triangle {
     /**
-     * The first side triangle
+     * The first side of triangle
      */
     protected double sideA;
     /**
-     * The second side triangle
+     * The second side of triangle
      */
     protected double sideB;
     /**
-     * The third side triangle
+     * The third side of triangle
      */
     protected double sideC;
     /**
-     * The first corner triangle
+     * The first corner of triangle
      */
     protected double alpha;
     /**
-     * The second corner triangle
+     * The second corner of triangle
      */
     protected double betta;
     /**
-     * The third corner triangle
+     * The third corner of triangle
      */
     protected double gamma;
     /**
-     * Perimeter triangle
+     * The perimeter of triangle
      */
     protected double perimeter;
     /**
-     * Area triangle
+     * The area of triangle
      */
     protected double area;
 
     /**
      * Construct of Triangle class
-     * @param sideA The first side triangle
-     * @param sideB The second side triangle
-     * @param sideC The third side triangle
+     * @param sideA The first side of triangle
+     * @param sideB The second side of triangle
+     * @param sideC The third side of triangle
      */
     public Triangle(final double sideA, final double sideB, final double sideC) {
         if (sideA < sideB + sideC && sideB < sideA + sideC && sideC < sideA + sideB) {

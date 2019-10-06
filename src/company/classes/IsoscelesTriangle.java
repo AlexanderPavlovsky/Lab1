@@ -7,9 +7,9 @@ import static company.classes.FunUtils.floatFromat;
 public class IsoscelesTriangle extends Triangle {
     /**
      * Construct of IsoscelesTriangle class
-     * @param sideA The first side triangle
-     * @param sideB The second side triangle
-     * @param sideC The third side triangle
+     * @param sideA The first side of isosceles triangle
+     * @param sideB The second side of isosceles triangle
+     * @param sideC The third side of isosceles triangle
      */
     public IsoscelesTriangle(final double sideA, final double sideB, final double sideC) {
         super(sideA, sideB, sideC);
