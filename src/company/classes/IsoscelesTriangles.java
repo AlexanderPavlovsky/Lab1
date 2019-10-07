@@ -22,7 +22,7 @@ public class IsoscelesTriangles {
      * Set array of isosceles triangle
      *
      * @param isoscelesTriangle Object isosceles triangle
-     * @param index number of isosceles triangle
+     * @param index             number of isosceles triangle
      */
     public void setIsoscelesTriangle(final IsoscelesTriangle isoscelesTriangle, final int index) {
         this.isoscelesTriangles[index] = isoscelesTriangle;
@@ -37,8 +37,10 @@ public class IsoscelesTriangles {
         double minArea = isoscelesTriangles[0].area;
         for (int i = 1; i < isoscelesTriangles.length; i++) {
             if (isoscelesTriangles[i].area != 0) {
-                if (minArea > isoscelesTriangles[i].area && minArea != 0) {
-                    minArea = isoscelesTriangles[i].area;
+                if (minArea != 0) {
+                    if (minArea > isoscelesTriangles[i].area) {
+                        minArea = isoscelesTriangles[i].area;
+                    }
                 } else {
                     minArea = isoscelesTriangles[i].area;
                 }
