@@ -25,7 +25,8 @@ public class Main {
     /**
      * Main function
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         int quantityTriangles, quantityIsoscelesTriangles;
         final Scanner str = new Scanner(System.in);
         System.out.print("Enter quantity of triangles: ");
@@ -48,7 +49,7 @@ public class Main {
             System.out.println(isoscelesTriangles.toString());
             System.out.println("Minimal area of all the isosceles triangles: " + floatFromat(isoscelesTriangles.getMinArea()) + " cm^2");
         } else {
-            System.out.println("Zero isosceles triangles");
+            System.out.println("Zero isosceless triangles");
         }
     }
 
